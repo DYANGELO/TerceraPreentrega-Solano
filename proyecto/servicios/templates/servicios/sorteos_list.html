@@ -1,0 +1,19 @@
+{% extends 'servicios/base.html' %}
+
+{% block header %}
+    Sorteos: Listado de Sorteos disponibles
+{% endblock header %}   
+
+{% block main %}
+
+    <button>
+        <a href="{% url 'sorteos_create' %}">Crear registro</a>
+    </button>
+
+    {% for object in object_list %}
+        <p>{{ object }} - Juega el día: {{ object.fecha }}</p>
+    {% empty %}
+        <p>No se encuentra disponible</p>
+    {% endfor %}
+
+{% endblock main %}

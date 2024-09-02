@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center; color: blue;">
+            {% block header %}
+            
+            {% endblock header %}
+        </h1>
+    </header>
+    <nav style=" justify-content: space-between; text-align: center;">
+        {% include 'servicios/navbar.html' %}
+    </nav>
+
+    <main style=" justify-content: space-between; text-align: center;">
+
+        {% block main %}
+            
+        {% endblock main %}
+
+    </main>
+
+    <footer>
+        {% block footer %}
+            
+        {% endblock footer %}
+    </footer>
+
+</body>
+</html>

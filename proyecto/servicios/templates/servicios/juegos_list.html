@@ -1,0 +1,20 @@
+{% extends 'servicios/base.html' %}
+
+{% block header %}
+    Juegos: Listado de Juegos disponibles
+{% endblock header %}
+
+{% block main %}
+
+    <button>
+        <a href="{% url 'juegos_create' %}">Crear registro</a>
+    </button>
+
+    {% for object in object_list %}
+        <p>{{ object.juego | upper }} - $ {{ object.precio }}</p>
+    {% empty %}
+        <p>No se encuentra disponible</p>
+    {% endfor %}
+{% endblock main %}
+
+
